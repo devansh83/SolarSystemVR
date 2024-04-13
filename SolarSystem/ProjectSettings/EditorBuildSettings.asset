@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/Google Cardboard XR Plugin for Unity/1.24.0/Hello Cardboard/Scenes/HelloCardboard.unity
     guid: 145a2a45d7bc746b19cb68410368bf96
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/SolarSystemwithPlanets_Divit.unity
+    guid: 89d64ad65c54e0b4ba03e13b1b5df902
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ab59a63821caf9846a48e2247d7a4c66, type: 2}
