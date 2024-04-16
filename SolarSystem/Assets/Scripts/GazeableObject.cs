@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class GazeableObject : MonoBehaviour
 {
-    public GameObject planet; // Reference to the associated planet GameObject
-    public Material skybox; // Reference to the Skybox component
+    public string sceneName; // Name of the scene to switch to
 
     public virtual void OnGazeEnter(RaycastHit hitInfo)
     {

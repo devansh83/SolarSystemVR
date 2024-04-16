@@ -9,7 +9,6 @@ public class GazeSystem : MonoBehaviour
     public Color inactiveReticleColor = Color.gray;
     public Color activeReticleColor = Color.green;
 
-    public string sceneName;
 
     private GazeableObject currentGazeObject;
     private GazeableObject currentSelectedObject;
@@ -57,8 +56,8 @@ public class GazeSystem : MonoBehaviour
 
                     if (gazeDuration >= requiredGazeDuration)
                     {
-                        MovePlayerToFrontOfTarget(currentGazeObject.planet);
-                        SwitchScene(currentGazeObject.skybox);
+                        //MovePlayerToFrontOfTarget(currentGazeObject.planet);
+                        SwitchScene(currentGazeObject.sceneName);
                     }
 
                     currentGazeObject.OnGaze(hitInfo);
@@ -119,10 +118,9 @@ public class GazeSystem : MonoBehaviour
         player.transform.parent = target.transform;
     }
 
-    public void SwitchScene(Material skyboxMaterial)
+    public void SwitchScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        RenderSettings.skybox = skyboxMaterial;
     }
 
 
