@@ -6,6 +6,9 @@ using UnityEngine;
 public class GazeableObject : MonoBehaviour
 {
     public string sceneName; // Name of the scene to switch to
+    public GameObject planet;
+
+    public int isPlanet;
 
     public virtual void OnGazeEnter(RaycastHit hitInfo)
     {

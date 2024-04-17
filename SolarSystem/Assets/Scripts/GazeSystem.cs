@@ -56,8 +56,14 @@ public class GazeSystem : MonoBehaviour
 
                     if (gazeDuration >= requiredGazeDuration)
                     {
-                        //MovePlayerToFrontOfTarget(currentGazeObject.planet);
-                        SwitchScene(currentGazeObject.sceneName);
+                        if (currentGazeObject.isPlanet == 0)
+                        {
+                            MovePlayerToFrontOfTarget(currentGazeObject.planet);
+                        }
+                        else if (gazeDuration >= requiredGazeDuration * 5)
+                        {
+                            SwitchScene(currentGazeObject.sceneName);
+                        }
                     }
 
                     currentGazeObject.OnGaze(hitInfo);
@@ -106,7 +112,7 @@ public class GazeSystem : MonoBehaviour
         Vector3 directionToTarget = target.transform.position - player.transform.position;
 
         // Calculate the desired distance from the target (adjust as needed)
-        float distanceFromTarget = 2f;
+        float distanceFromTarget = 3f;
 
         // Calculate the target position in front of the object
         Vector3 targetPosition = target.transform.position - directionToTarget.normalized * distanceFromTarget;

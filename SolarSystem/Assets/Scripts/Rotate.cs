@@ -14,13 +14,13 @@ public class Rotate : MonoBehaviour
     void Start()
     {
         // Initialize LineRenderer component
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.positionCount = 0;
-        lineRenderer.startWidth = 0.05f;
-        lineRenderer.endWidth = 0.05f;
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = Color.white;
-        lineRenderer.endColor = Color.white;
+        // lineRenderer = gameObject.AddComponent<LineRenderer>();
+        // lineRenderer.positionCount = 0;
+        // lineRenderer.startWidth = 0.05f;
+        // lineRenderer.endWidth = 0.05f;
+        // lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        // lineRenderer.startColor = Color.white;
+        // lineRenderer.endColor = Color.white;
     }
 
     // Update is called once per frame
@@ -30,22 +30,22 @@ public class Rotate : MonoBehaviour
         transform.RotateAround(target.position, Vector3.up, speed * Time.deltaTime);
 
         // Add current position to the orbitPoints list
-        orbitPoints.Add(transform.position);
+        // orbitPoints.Add(transform.position);
 
-        // Update orbit trajectory
-        UpdateOrbitTrajectory();
+        // // Update orbit trajectory
+        // UpdateOrbitTrajectory();
     }
 
     // Function to update orbit trajectory
-    void UpdateOrbitTrajectory()
-    {
-        // Set the number of points to be equal to the number of elements in orbitPoints
-        lineRenderer.positionCount = orbitPoints.Count;
+    // void UpdateOrbitTrajectory()
+    // {
+    //     // Set the number of points to be equal to the number of elements in orbitPoints
+    //     lineRenderer.positionCount = orbitPoints.Count;
 
-        // Update the positions of LineRenderer based on orbitPoints
-        for (int i = 0; i < orbitPoints.Count; i++)
-        {
-            lineRenderer.SetPosition(i, orbitPoints[i]);
-        }
-    }
+    //     // Update the positions of LineRenderer based on orbitPoints
+    //     for (int i = 0; i < orbitPoints.Count; i++)
+    //     {
+    //         lineRenderer.SetPosition(i, orbitPoints[i]);
+    //     }
+    // }
 }
